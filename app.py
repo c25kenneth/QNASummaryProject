@@ -14,6 +14,13 @@ def load_summarizer_model():
 qa = load_qa_model()
 summarizer = load_summarizer_model()
 
+hide_streamlit_style = """
+             <style>
+             #MainMenu {visibility: hidden;}
+             footer {visibility: hidden;}
+             </style>
+             """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 st.title("Get a summary and ask questions about your text.")
 maxSummar = st.sidebar.slider('Choose max summary length', 90, 600, step=5, value = 150)
